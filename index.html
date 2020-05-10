@@ -19,9 +19,9 @@
             <a href="#home" id="logo"><img src="images/Component 1.png" alt=""></a>            
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">services</a></li>
-                    <li><a href="#contact"></i>Contact</a></li>
+                    <li><a href="#about" class="js-scroll-trigger">About</a></li>
+                    <li><a href="#services" class="js-scroll-trigger">services</a></li>
+                    <li><a href="#contact" class="js-scroll-trigger"></i>Contact</a></li>
                 </ul>
             </nav>
             </section>
@@ -32,8 +32,8 @@
                 <h1><span>Travelling Soon ?</span></h1>
                 <h2><span class="txt-rotate"></span></h2>
                 <p>Discover Your Best Steps With Us Today!</p>
-                <div class="getintouch">
-                    <div><button type="button">Get Started</button></div>
+                <div class="getintouch" >
+                    <div><button type="button" id="titlebtn">Get Started</button></div>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                             <p>We are a Travel Agency business located in Lagos Island, Lagos State, Nigeria.</p>
                             <p>With years of experience and having worked with over  hundreds of clients over the years on different sectors of the travel industry, we put Client's satisfaction and happiness first with personalized services that makes their travel experiences an exciting and equally loving one.</p>
                             <div class="getintouch">
-                                <div><button href="#contact" type="submit">Contact Us Now</button></div>
+                                <div><button href="#contact" type="button" id="aboutbtn">Contact Us Now</button></div>
                             </div>                           
                         </div>
                     </div>                
@@ -153,54 +153,93 @@
         </div>
     </section>
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10">
-                    <div class="sec-title">
-                        <h2>Get In Touch</h2>
-                    </div>
-                </div>
-            </div>                    
+        <div class="container">                               
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                   <div class="form-box">
-                        <p>Interested in our services? Reach out to us today!</p>
-                        <p>Our team would get back to you within 24 hours, but probably sooner.</p>
-                        <p><i class="mdi mdi-map-marker-outline"</i></p>
-                        <p><i class="mdi mdi-phone-in-talk"></i></p>
-                        <div class="container">  
+                   <div class="service-box">
+                        
+
+                       <div class="contacttexts">
+                            <div class="row">
+
+                                
+                                <div class="col-lg-10">
+                                    <div class="sec-title">
+                                    <h2>Get In Touch</h2>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form">  
                             <form action="#" role="form">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="name" required>
-                                    <label for="email">Your Name</label>
+                                    <label for="name">Your Name</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control" id="email" required>
-                                    <label for="email">Your Email</label>
+                                    <label for="email" class="formlabel">Your Email</label>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control" id="email">
-                                    <label for="email">Subject (Optional)</label>
+                                    <label for="subject">Subject (Optional)</label>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" rows="5" required></textarea>
-                                    <label for="email">Your Email</label>
+                                    <textarea name="message" class="form-control" rows="3" required></textarea>
+                                    <label for="message">message</label>
                                 </div>
                                 <button type="button" type="submit">Send Message</button>
-                            </form>
-                            
-                        </div>                           
+                            </form>                            
+                        </div> 
+                        <div>
+                            <p>Interested in our services? Reach out to us today!</p>
+                            <p>Our team would get back to you within 24 hours, but probably sooner.</p>
+                            <div class="icontitle">
+                                <i class="mdi mdi-map-marker-outline"></i><span><p> Sura Shopping Complex Block B, Suit 22, Simpson Street Lagos Island, Lagos.</p></span>
+                                <i class="mdi mdi-phone-in-talk"></i><span><p>08054129374, 07087614730.</p></span>
+                            </div>
+                            <div class="socialicons">
+                                <span><a href="#"><i class="mdi mdi-email-outline"></i></a></span>
+                                <span><a href="#"><i class="mdi mdi-facebook"></i></a></span>
+                                <span><a href="#"><i class="mdi mdi-instagram"></i></a></span>
+                            </div>                      
+                        </div>
+                        
+                                                  
                     </div> 
+
                 </div>                   
             </div>                    
         </div>
     </section>
-
-    <section class="footer" id="footer"></section>
+    <section class="footer" id="footer">
+        <footer>
+            <p>&copy Olatohdimeji 2020 for Pactani Ventures</p>
+        </footer>
+    </section>
 
     <script src="js/jquery-3.5.0.min.js"></script>
     <script src="js/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/typed.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#titlebtn").click(function() {
+                  $("#services").focus();
+            });
+
+            $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                $('html, body').animate({
+                    scrollTop: (target.offset().top - 71)
+                }, 1000, "easeInOutExpo");
+            return false;
+        }
+      }
+    });
+        });
+    </script>
 </body>
 </html>
